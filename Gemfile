@@ -51,8 +51,3 @@ gem 'devise', '3.4.1'
 
 # Redcarpet: https://github.com/vmg/redcarpet
 gem 'redcarpet', '3.2.3'
-
-# Unicorn: http://unicorn.bogomips.org
-group :production do
-  gem 'unicorn'
-end
