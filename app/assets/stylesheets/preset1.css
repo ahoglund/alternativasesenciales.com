@@ -61,7 +61,7 @@ a.read-more span {
 }
 
 .footer-logo {
-	background-image:url("logo/footer-logo.png");
+	background-image:url(logo/footer-logo.png);
 }
 
 #navigation .navbar-fixed-top {
@@ -73,21 +73,21 @@ a.read-more span {
 }
 
 #main-slider .item.item-one{
-	background-image: url("slider/default/1.jpg");
+	background-image: url(slider/default/1.jpg);
 }
 
 #main-slider .item.item-two{
-	background-image: url("slider/default/2.jpg");
+	background-image: url(slider/default/2.jpg);
 }
 
 #main-slider.content-slider2 {
-	background-image: url("slider/default/1.jpg");
+	background-image: url(slider/default/1.jpg);
 }
 
 #main-slider.content-slider {
-	background-image: url("slider/default/2.jpg")
+	background-image: url(slider/default/2.jpg)
 }
 
 #sub-page  #navigation{
-	background: url("slider/default/header-bg.jpg");
+	background: url(slider/default/header-bg.jpg);
 }

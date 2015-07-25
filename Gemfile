@@ -10,6 +10,7 @@ gem 'jquery-rails', '4.0.3'
 gem 'turbolinks', '2.5.3'
 gem 'jbuilder', '2.2.13'
 gem 'bcrypt', '3.1.10'
+gem 'twitter'
 
 # Necessary for Windows OS (won't install on *nix systems)
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
@@ -22,6 +23,10 @@ gem 'friendly_id', '5.1.0'
 
 # Font-awesome: https://github.com/FortAwesome/font-awesome-sass
 gem 'font-awesome-sass', '4.3.2.1'
+
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
 
 # Bootstrap 3: https://github.com/twbs/bootstrap-sass
 gem 'bootstrap-sass', '3.3.4.1'

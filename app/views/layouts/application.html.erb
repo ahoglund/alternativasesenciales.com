@@ -9,13 +9,13 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body id="<%= "sub-page" if controller_name == "pages" %>">
   <div id="wrap">
     <header>
       <%= render 'layouts/navigation' %>
     </header>
 
-    <div class="container">
+    <div class="container-fluid">
 
       <div class="row">
         <div class="col-sm-6 col-sm-offset-3 text-center">

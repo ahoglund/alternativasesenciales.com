@@ -1,10 +1,13 @@
-<% title("Contact") %>
-<h1 class="page-title">Contact</h1>
 
-<div class="row">
-  <div class="col-sm-6">
 
-    <%= form_tag email_confirmation_path, method: 'post', html: {role: "form"} do %>
+    <div class="container">
+      <div class="text-center page-title">        
+        <% title("Contact") %>
+         <h1 class="page-title">Contact</h1>
+        <p></p>
+      </div> 
+      <div class="contact-wrap"> 
+         <%= form_tag email_confirmation_path, method: 'post', html: {role: "form"} do %>
 
     <div class="form-group">
       <%= label_tag :name, "Your name" %>
@@ -41,6 +44,6 @@
       </div>
     </div>
     <% end %>
-
-  </div>
-</div>
+      </div>
+    </div><!--/.container-->  
+  </div><!--/#contact-page-->

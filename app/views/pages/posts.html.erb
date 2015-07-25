@@ -1,18 +1,86 @@
-<% title("Posts") %>
-<h1>Posts</h1>
 
-<% @posts.each do |post| %>
-
-<div class="title-box">
-  <p>
-    <%= link_to "#{post.title}", post_path(post.slug) %> <br/>
-    <span><small><em><%= time_ago_in_words(post.updated_at) %> ago</em></small></span>
-  </p>
-
-</div>
-
-<% end %>
-
+	<div id="main-blog">
+		<div class="container padding-top">
+			<div class="row section-title text-center">
+				<div class="col-sm-8 col-sm-offset-2">
+				    <% title("Our Blog") %>
+					<h1>Our Blog</h1>
+					<p></p>
+				</div>
+			</div>
+			<div class="row">
+				<div id="sidebar" class="col-md-4">
+					<div class="widget-area">
+						<div class="widget widget_search">
+							<form role="form" id="search" method="get" name="contact-form" action="#">
+								<div class="form-group">
+									<input type="text" class="form-control" autocomplete="off" placeholder="Blog Search">
+									<button type="submit" class="btn"><i class="fa fa-search"></i></button>
+								</div>
+							</form>
+						</div>	
+						
+						<div class="widget widget_categories">
+							<h3 class="widget_title">Categories</h3>
+							<ul>
+								<li><a href="#">Business</a></li>
+								<li><a href="#">Creative</a></li>
+								<li><a href="#">Marketing</a></li>
+								<li><a href="#">Bloging</a></li>
+								<li><a href="#">Science</a></li>
+							</ul>
+						</div>
+						
+						<div class="widget">
+							<h3 class="widget_title">Latest Posts</h3>
+							<div class="latest-posts">
+                              <%= render partial: 'latest_posts', as: 'latest_post', collection: Post.all.limit(5) %>
+							</div>
+						</div>
+						
+						<div class="widget">
+							<h3 class="widget_title">Recent Comments</h3>
+							<div class="recent-comment">								
+                              <%= render partial: 'recent_comments', as: 'recent_comment', collection: Post.all.limit(5) %>
+							</div>
+						</div>
+						
+						<div class="widget tag-cloud">
+							<h3 class="widget_title">Tag Clouds</h3>
+							<ul>
+								<li><a href="#">Business</a></li>
+								<li><a href="#">Creative</a></li>
+								<li><a href="#">Marketing</a></li>
+								
+								<li><a href="#">Bloging</a></li>
+								<li><a href="#">Science</a></li>
+								<li><a href="#">Multipurpose</a></li>
+								<li><a href="#">Graphics</a></li>
+								<li><a href="#">Art</a></li>
+								<li><a href="#">Graphics</a></li>
+							</ul>
+						</div>
+					</div>
+				</div> <!--/Sidebar-->
+				
+				<div id="content" class="site-content col-md-8">
+                    <%= render partial: 'post', as: 'post', collection: @posts %>
+				</div>				
+			</div>
+			<div class="text-center pagination-control pagination-section">
+				<nav>
+					<ul class="pagination">
+						<li><a href="#" aria-label="Previous"><span aria-hidden="true">Previous</span></a></li>
+						<li><a href="#">1</a></li>
+						<li><a class="active" href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#" aria-label="Next"><span aria-hidden="true">Next</span></a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div><!--/#main-blog--> 
 <div class="pagination-control text-center">
   <%= paginate @posts %>
 </div>
