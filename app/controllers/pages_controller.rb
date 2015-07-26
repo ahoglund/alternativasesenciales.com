@@ -11,7 +11,7 @@ class PagesController < ApplicationController
   
   def posts
     if params[:category]
-      @posts = Post.tagged_with(params[:category])
+      @posts = Post.published.tagged_with(params[:category]).page(params[:page]).per(4)
     else
       @posts = Post.published.page(params[:page]).per(4)
     end
