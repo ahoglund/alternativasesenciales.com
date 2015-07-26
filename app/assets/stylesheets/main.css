@@ -723,7 +723,7 @@ h1, h2, h3, h4, h5, h6 {
 ==== Parallax Section ====
 ==========================*/
 #parallax-one {
-	background-image: url("../images/parallax-bg/1.jpg");
+	background-image: url("parallax-bg/1.jpg");
 }
 
 #parallax-one .overlay {
@@ -1168,7 +1168,7 @@ a.entry-title h2 {
 =======Parallax Two ======
 ==========================*/
 #parallax-two {
-	background-image: url("../images/parallax-bg/2.jpg");
+	background-image: url("parallax-bg/2.jpg");
 }
 
 #parallax-two .overlay {
@@ -1200,7 +1200,7 @@ a.entry-title h2 {
 == Testimonial Section ===
 ==========================*/
 #testimonial {
-	background: url(../images/parallax-bg/testimonial.jpg);
+	background: url(parallax-bg/testimonial.jpg);
 	background-attachment: fixed;
 }
 
@@ -1279,12 +1279,12 @@ a.entry-title h2 {
 }
 
 #testimonial .item p:before {
-	background: url(../images/testimonial/quote-left.png) no-repeat;
+	background: url(testimonial/quote-left.png) no-repeat;
 	left: 0;
 }
 
 #testimonial .item p:after {
-	background: url(../images/testimonial/quote-right.png) no-repeat;
+	background: url(testimonial/quote-right.png) no-repeat;
 	right: 0;
 }
 
@@ -1411,7 +1411,7 @@ a.entry-title h2 {
 ==========================*/
 
 .footer-widget-wrapper {
-	background: url(../images/bg/1.jpg) no-repeat;
+	background: url(bg/1.jpg) no-repeat;
 	padding: 57px 0 20px;
 	border-top: 1px solid #dfdfdf;
 	position: relative;
@@ -1621,7 +1621,7 @@ a.entry-title h2 {
 ===== 404 Error CSS =======
 ===========================*/
 .error-page {
-	background-image:url(../images/others/404-bg.jpg);
+	background-image:url(others/404-bg.jpg);
 	background-repeat:no-repeat;
 	background-size:cover;
 	height: 100%;
@@ -1666,7 +1666,7 @@ a.entry-title h2 {
 =========================*/
 
 .coming-soon {
-	background-image:url(../images/others/coming-soon-bg.jpg);
+	background-image:url(others/coming-soon-bg.jpg);
 	background-repeat:no-repeat;
 	background-size:cover;
 	color:#fff;
@@ -1887,7 +1887,7 @@ a.entry-title h2 {
 }
 
 #pricing-tables .section-title h2:before {
-    background-image: url("../images/home/icons/pricing-title-icon.png");
+    background-image: url("home/icons/pricing-title-icon.png");
 }
 
 /*========================

@@ -1,6 +1,8 @@
-<% title("New post") %>
-<h3 class="page-title">Add a new post</h3>
-<p><%= link_to "Back to dashboard", admin_posts_dashboard_path %></p>
-<hr/>
-
-<%= render 'form' %>
+<div class="row">
+	<div id="content" class="site-content col-md-12"><% title("New post") %>
+		<h3 class="page-title">Add a new post</h3>
+		<p><%= link_to "Back to dashboard", admin_posts_dashboard_path %></p>
+		<hr/>
+		<%= render 'form' %>
+	</div>
+</div>

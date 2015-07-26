@@ -1,11 +1,6 @@
-<div class="media">
-	<div class="pull-left">
-		<%= image_tag('blog/author.jpg', class: "img-responsive") %>
-	</div>
-	<div class="media-body">
-		<h4 class="entry-title"><a href="#">Comment</a></h4>
-		<div class="entry-meta small">
-			<p><i class="fa fa-calendar"></i>12 Feb 2015</p>
-		</div>
+<div class="widget">
+	<h3 class="widget_title">Recent Comments</h3>
+	<div class="recent-comment">
+		<%= render partial: 'recent_comment', as: 'recent_comment', collection: Post.all.limit(5) %>
 	</div>
 </div>

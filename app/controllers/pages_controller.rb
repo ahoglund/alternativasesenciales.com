@@ -10,7 +10,11 @@ class PagesController < ApplicationController
   end
   
   def posts
-    @posts = Post.published.page(params[:page]).per(10)
+    if params[:category]
+      @posts = Post.tagged_with(params[:category])
+    else
+      @posts = Post.published.page(params[:page]).per(4)
+    end
   end
   
   def show_post
@@ -18,7 +22,6 @@ class PagesController < ApplicationController
   rescue
     redirect_to root_path
   end
-
   
   def email
     @name = params[:name]

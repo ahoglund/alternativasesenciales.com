@@ -1,34 +1,35 @@
 	<div id="main-blog">
 		<div class="container padding-top">
-			<div class="row">				
-				<div id="content" class="full-width site-content col-md-12">
+			<div class="row">
+				<%= render partial: 'sidebar' %>
+				<div id="content" class="site-content col-md-8">
 					<div class="post">
 						<div class="entry-header">
 							<div class="entry-thumbnail">
-								<%= image_tag("blog/post2.jpg", class: "img-responsive") %>
+								<img class="img-responsive" src="/assets/blog/post2.jpg" alt="" />
 							</div>
 						</div>
 						<div class="post-content">	
 							<h2 class="entry-title">
-								<a href="blog-detail.html">Exercitation photo booth stumptown</a>
+								<%= @post.title %>
 							</h2>
 							<div class="entry-meta">
 								<ul>
 									<li class="author"><i class="fa fa-user"></i><a href="#">Admin</a></li>
-									<li class="publish-date"><i class="fa fa-calendar"></i><a href="#"><%= @post.updated_at.strftime("%Y, %B %-d") %></a></li>
+									<li class="publish-date"><i class="fa fa-calendar"></i><a href="#">24 Feb 2015</a></li>
 									<li class="tag"><i class="fa fa-tags"></i><a href="#">Business</a></li>
 									<li class="comments"><i class="fa fa-comments-o"></i><a href="#">9 Comments</a></li>
 								</ul>
 							</div>
 							<div class="entry-summary">
-                               <%= @post.content_html.html_safe %>
+	              <%= @post.content_html.html_safe %>
 							</div>
 							<div class="social-share">
 								<ul>
-									<li><a href="#"><img class="img-responsive" src="images/blog/share1.jpg" alt="" /></a></li>
-									<li><a href="#"><img class="img-responsive" src="images/blog/share2.jpg" alt="" /></a></li>
-									<li><a href="#"><img class="img-responsive" src="images/blog/share3.jpg" alt="" /></a></li>
-									<li><a href="#"><img class="img-responsive" src="images/blog/share4.jpg" alt="" /></a></li>
+									<li><a href="#"><img class="img-responsive" src="/assets/blog/share1.jpg" alt="" /></a></li>
+									<li><a href="#"><img class="img-responsive" src="/assets/blog/share2.jpg" alt="" /></a></li>
+									<li><a href="#"><img class="img-responsive" src="/assets/blog/share3.jpg" alt="" /></a></li>
+									<li><a href="#"><img class="img-responsive" src="/assets/blog/share4.jpg" alt="" /></a></li>
 								</ul>
 							</div><!--/social-share-->
 						</div>
@@ -37,7 +38,7 @@
 						<div class="media author-details">
 							<h3>About Author</h3>
 							<a class="pull-left" href="#">
-								<img class="media-object" src="images/blog/author.png" alt="">
+								<img class="media-object" src="/assets/blog/author.png" alt="">
 							</a>
 							<div class="media-body">							
 								<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper letters, as opposed to using Content here, content. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet.</p>
@@ -54,7 +55,7 @@
 								<li class="media">
 									<div class="post-comment">
 										<a class="pull-left" href="#">
-											<img class="media-object" src="images/blog/author.png" alt="">
+											<img class="media-object" src="/assets/blog/author.png" alt="">
 										</a>
 										<div class="media-body">
 											<h3>John Doe says:</h3>
@@ -67,7 +68,7 @@
 										
 										<li class="post-comment">
 											<a class="pull-left" href="#">
-												<img class="media-object" src="images/blog/author.png" alt="">
+												<img class="media-object" src="/assets/blog/author.png" alt="">
 											</a>
 											<div class="media-body">
 												<h3 class="media-heading">John Doe says:</h3>
@@ -78,7 +79,7 @@
 										</li>
 										<li class="post-comment">
 											<a class="pull-left" href="#">
-												<img class="media-object" src="images/blog/author.png" alt="">
+												<img class="media-object" src="/assets/blog/author.png" alt="">
 											</a>
 											<div class="media-body">
 												<h3 class="media-heading">John Doe says:</h3>
@@ -92,7 +93,7 @@
 								<li class="media">
 									<div class="post-comment">
 										<a class="pull-left" href="#">
-											<img class="media-object" src="images/blog/author.png" alt="">
+											<img class="media-object" src="/assets/blog/author.png" alt="">
 										</a>
 										<div class="media-body">
 											<h3 class="media-heading">John Doe says:</h3>

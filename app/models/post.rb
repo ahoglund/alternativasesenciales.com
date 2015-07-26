@@ -18,6 +18,9 @@ class Post < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: :slugged
 
+  acts_as_taggable # Alias for acts_as_taggable_on :tags
+ # acts_as_taggable_on :skills, :interests
+
   # Markdown
   before_save { MarkdownWriter.update_html(self) }
 
