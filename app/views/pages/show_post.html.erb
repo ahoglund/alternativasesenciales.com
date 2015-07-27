@@ -1,12 +1,12 @@
 	<div id="main-blog">
 		<div class="container padding-top">
 			<div class="row">
-				<%= render partial: 'sidebar' %>
+				<%= render partial: 'layouts/sidebar' %>
 				<div id="content" class="site-content col-md-8">
 					<div class="post">
 						<div class="entry-header">
 							<div class="entry-thumbnail">
-								<img class="img-responsive" src="/assets/blog/post2.jpg" alt="" />
+								<%= image_tag(@post.image_url.to_s, class: "img-responsive") %>
 							</div>
 						</div>
 						<div class="post-content">	
@@ -61,7 +61,7 @@
 											<h3>John Doe says:</h3>
 											<h4>23/02/2015</h4>
 											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-											<a class="btn-reply pull-right" href=""> <i class="fa fa-mail-forward (alias)"></i> Replay</a>
+											<a class="btn-reply pull-right" href=""> <i class="fa fa-mail-forward (alias)"></i> Reply</a>
 										</div>
 									</div>								
 									<ul class="parent media-list">
@@ -99,40 +99,14 @@
 											<h3 class="media-heading">John Doe says:</h3>
 											<h4>17/02/2015</h4>
 											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-											<a class="btn-reply pull-right" href=""> <i class="fa fa-mail-forward (alias)"></i> Replay</a>
+											<a class="btn-reply pull-right" href=""> <i class="fa fa-mail-forward (alias)"></i> Reply</a>
 										</div>
 									</div>
 								</li>
 							</ul>					
 						</div><!--/comments-area-->
-						<div class="replay-box">
-							<div class="row">
-								<div class="col-sm-12">
-									<h3>Leave a Comment</h3>
-									<form id="comment-form" class="row" name="comment-form" method="post">
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input type="text" name="name" class="form-control" required="required" placeholder="Name">
-											</div>
-											<div class="form-group">
-												<input type="email" name="email" class="form-control" required="required" placeholder="Email">
-											</div>
-											<div class="form-group">
-												<input type="text" name="url" class="form-control"  placeholder="Website">
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<textarea name="message" id="message" required="required" class="form-control" rows="7" placeholder="Your Comment"></textarea>
-											</div>
-										</div>
-										<div class="col-sm-12 form-group">
-											<button type="submit" class="btn btn-primary pull-right">Send Comment</button>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div><!--/Repaly Box-->
+			      <%= render partial: 'comment_form', locals: { commentable: @post } %>
+
 					</div><!--/media-wrapper-->
 				</div>
 			</div>

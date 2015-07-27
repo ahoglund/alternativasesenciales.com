@@ -19,8 +19,9 @@ class PagesController < ApplicationController
   
   def show_post
     @post = Post.friendly.find(params[:id])
-  rescue
-    redirect_to root_path
+    @comment = @post.comments.build
+  # rescue
+  #   redirect_to root_path
   end
   
   def email

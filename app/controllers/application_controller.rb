@@ -28,6 +28,11 @@ class ApplicationController < ActionController::Base
     inside_path
   end
 
+  def categories
+    @categories ||= ActsAsTaggableOn::Tag.most_used(10)
+  end
+  helper_method :categories
+
   # Auto-sign out locked users
   def reject_locked!
     if current_user && current_user.locked?

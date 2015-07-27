@@ -1,9 +1,9 @@
-
-  <%= simple_form_for [:admin, @post], role: "form" do |f| %>
-  <%= f.input :title, :autofocus => true, class: " monospaced-control", placeholder: "Title (also used for URL slug)..." %>
-  <%= f.input :content_md, rows: 15, class: "monospaced-control", placeholder: "Post content (Markdown format)..." %>
-  <%= f.input :draft %>
-  <%= f.input :tag_list %>
-  <%= f.button :submit, value: "Publish" %>
-  <%= link_to "Cancel", admin_posts_dashboard_path %>
+<%= simple_form_for [:admin, @post], role: "form", multipart: true do |f| %>
+<%= f.input :title, :autofocus => true, class: " monospaced-control", placeholder: "Title (also used for URL slug)..." %>
+<%= f.input :content_md, rows: 15, class: "monospaced-control", placeholder: "Post content (Markdown format)..." %>
+<%= f.input :draft %>
+<%= f.input :image %>
+<%= f.input :tag_list %>
+<%= f.button :submit, value: "Publish" %>
+<%= link_to "Cancel", admin_posts_dashboard_path %>
 <% end %>

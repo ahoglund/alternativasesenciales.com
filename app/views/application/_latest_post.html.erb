@@ -1,7 +1,7 @@
 <div class="media">
 	<div class="pull-left">
 		<%= link_to latest_post do %>
-           <%= image_tag('blog/post1.jpg', class: "img-responsive") %>	
+          <%= image_tag(latest_post.image_url.to_s, class: "img-responsive") %>
 		<% end %>
 	</div>
 	<div class="media-body">

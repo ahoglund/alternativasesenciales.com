@@ -8,12 +8,13 @@ class Admin::PostsController < Admin::BaseController
 
 
   def dashboard
-    @published_post_count = Post.published.count
-    @draft_post_count = Post.drafted.count
+
   end
 
   def index
     @posts = Post.published.page(params[:page]).per(50)
+    @published_post_count = Post.published.count
+    @draft_post_count = Post.drafted.count
   end
 
   def drafts
@@ -66,7 +67,8 @@ class Admin::PostsController < Admin::BaseController
     :content_md,
     :draft,
     :updated_at,
-    :tag_list
+    :tag_list,
+    :image
     )
   end
 

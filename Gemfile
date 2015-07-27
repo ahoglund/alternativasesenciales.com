@@ -13,6 +13,7 @@ gem 'bcrypt', '3.1.10'
 gem 'twitter'
 gem 'simple_form'
 gem 'acts-as-taggable-on', '~> 3.4'
+gem 'acts_as_commentable'
 gem 'carrierwave'
 #gem 'rmagick'
 # Necessary for Windows OS (won't install on *nix systems)
@@ -56,6 +57,9 @@ end
 
 # Devise: https://github.com/plataformatec/devise
 gem 'devise', '3.4.1'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 
 # Redcarpet: https://github.com/vmg/redcarpet
 gem 'redcarpet', '3.2.3'

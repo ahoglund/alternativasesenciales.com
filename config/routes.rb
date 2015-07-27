@@ -57,6 +57,7 @@ AlternativasEsenciales::Application.routes.draw do
   get 'category/:category', to: 'pages#posts', as: "category"
   get "posts", to: "pages#posts", as: "posts"
   get "posts/:id", to: "pages#show_post", as: "post"
+  resources :comments
   devise_for :users
 
   namespace :admin do
