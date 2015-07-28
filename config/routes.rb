@@ -58,7 +58,7 @@ AlternativasEsenciales::Application.routes.draw do
   get "posts", to: "pages#posts", as: "posts"
   get "posts/:id", to: "pages#show_post", as: "post"
   resources :comments
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
 
   namespace :admin do
     root "base#index"

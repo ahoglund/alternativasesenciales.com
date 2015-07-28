@@ -49,64 +49,8 @@
 								</div>
 							</div>
 						</div><!--author-details-->
-						<div class="comments-area">
-							<h3 class="comments-heading">Comments</h3>
-							<ul class="media-list">
-								<li class="media">
-									<div class="post-comment">
-										<a class="pull-left" href="#">
-											<img class="media-object" src="/assets/blog/author.png" alt="">
-										</a>
-										<div class="media-body">
-											<h3>John Doe says:</h3>
-											<h4>23/02/2015</h4>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-											<a class="btn-reply pull-right" href=""> <i class="fa fa-mail-forward (alias)"></i> Reply</a>
-										</div>
-									</div>								
-									<ul class="parent media-list">
-										
-										<li class="post-comment">
-											<a class="pull-left" href="#">
-												<img class="media-object" src="/assets/blog/author.png" alt="">
-											</a>
-											<div class="media-body">
-												<h3 class="media-heading">John Doe says:</h3>
-												<h4>23/02/2015</h4>
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>											
-											</div>
-											
-										</li>
-										<li class="post-comment">
-											<a class="pull-left" href="#">
-												<img class="media-object" src="/assets/blog/author.png" alt="">
-											</a>
-											<div class="media-body">
-												<h3 class="media-heading">John Doe says:</h3>
-												<h4>24/02/2015</h4>
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>											
-											</div>
-										</li>
-									</ul>
-									
-								</li>
-								<li class="media">
-									<div class="post-comment">
-										<a class="pull-left" href="#">
-											<img class="media-object" src="/assets/blog/author.png" alt="">
-										</a>
-										<div class="media-body">
-											<h3 class="media-heading">John Doe says:</h3>
-											<h4>17/02/2015</h4>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-											<a class="btn-reply pull-right" href=""> <i class="fa fa-mail-forward (alias)"></i> Reply</a>
-										</div>
-									</div>
-								</li>
-							</ul>					
-						</div><!--/comments-area-->
-			      <%= render partial: 'comment_form', locals: { commentable: @post } %>
-
+            <%= render partial: 'comments_area', locals: { commentable: @post } %>
+			      <%= render partial: 'comment_form',  locals: { commentable: @post } %>
 					</div><!--/media-wrapper-->
 				</div>
 			</div>

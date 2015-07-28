@@ -7,7 +7,7 @@
 			  <%= f.input :comment %>
 			  <%= f.input :commentable_id, as: :hidden, value: commentable.id %> 
 			  <%= f.input :commentable_type, as: :hidden, value: commentable.class %>
-			  <%= f.input :user_id, value: current_user.id if user_signed_in? %>
+			  <%= f.input :user_id, as: :hidden, value: current_user.id if user_signed_in? %>
 			  <%= f.button :submit, value: "Send Comment", class: "pull-right" %>
 			<% end %>
 		</div>

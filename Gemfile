@@ -15,7 +15,10 @@ gem 'simple_form'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'acts_as_commentable'
 gem 'carrierwave'
-#gem 'rmagick'
+gem 'rmagick'
+
+gem 'ckeditor'
+
 # Necessary for Windows OS (won't install on *nix systems)
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 

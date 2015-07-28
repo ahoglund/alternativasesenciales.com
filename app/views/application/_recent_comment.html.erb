@@ -1,11 +1,11 @@
 <div class="media">
 	<div class="pull-left">
-		<%= image_tag('blog/author.jpg', class: "img-responsive") %>
+		<%= image_tag('/assets/blog/author.png', class: "img-responsive") %>
 	</div>
 	<div class="media-body">
-		<h4 class="entry-title"><a href="#">Comment</a></h4>
+		<h4 class="entry-title"><a href="#"><%= recent_comment.title %></a></h4>
 		<div class="entry-meta small">
-			<p><i class="fa fa-calendar"></i>12 Feb 2015</p>
+			<p><i class="fa fa-calendar"></i><%= recent_comment.created_at %></p>
 		</div>
 	</div>
 </div>

@@ -1,0 +1,17 @@
+		<li class="media">
+			<div class="post-comment">
+				<a class="pull-left" href="#">
+					<img class="media-object" src="/assets/blog/author.png" alt="">
+				</a>
+				<div class="media-body">
+					<h3 class="media-heading"><%= @comment.user %> says:</h3>
+					<h4><%= @comment.title %></h4>
+					<h4><%= @comment.created_at %></h4>
+					<p><%= @comment.comment %></p>
+					<a class="btn-reply pull-right" href=""> <i class="fa fa-mail-forward (alias)"></i> Reply</a>
+				</div>
+			</div>
+		</li>
+	  <ul class="parent media-list">
+			<!-- put child comments here -->
+	  </ul>

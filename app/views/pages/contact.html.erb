@@ -1,5 +1,6 @@
 <div id="contact-page">
   <div class="container padding-top">
+    <%= render partial: 'page_heading', locals: { page_heading: 'Contact Us', page_sub_heading: "" } %>
     <div class="contact-wrap">
       <%= form_tag email_confirmation_path, method: 'post', html: {role: "form"} do %>
       <div class="form-group">
