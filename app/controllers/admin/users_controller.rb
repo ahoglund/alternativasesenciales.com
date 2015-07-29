@@ -7,9 +7,8 @@ class Admin::UsersController < Admin::BaseController
     :destroy
   ]
 
-  
   def index
-    @users = User.search_and_order(params[:search], params[:page])
+    @users = User::Search.new(params[:search], params[:page]).execute_query
   end
 
   def show

@@ -9,14 +9,7 @@
 			<h2 class="entry-title">
 			<%= link_to post.title, post %>
 			</h2>
-			<div class="entry-meta">
-				<ul>
-					<li class="author"><i class="fa fa-user"></i><%= post.user.email %></li>
-					<li class="publish-date"><i class="fa fa-calendar"></i><%= time_ago_in_words(post.updated_at) %></li>
-					<li class="tag"><i class="fa fa-tags"></i><a href="#">Business</a></li>
-					<li class="comments"><i class="fa fa-comments-o"></i><a href="#">9 Comments</a></li>
-				</ul>
-			</div>
+            <%= render partial: 'post_meta_information', locals: { post: post } %>
 			<div class="entry-summary">
 				<p><%= post.content_html.html_safe %></p>
 			</div>

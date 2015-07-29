@@ -16,7 +16,7 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem 'acts_as_commentable'
 gem 'carrierwave'
 gem 'rmagick'
-
+gem 'active_type'
 gem 'ckeditor'
 
 # Necessary for Windows OS (won't install on *nix systems)
