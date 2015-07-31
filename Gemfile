@@ -18,6 +18,9 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'active_type'
 gem 'ckeditor'
+gem 'jquery-datatables-rails'
+gem 'flot-rails', :git => "https://github.com/Kjarrigan/flot-rails.git"
+gem 'bootstrap-social-rails'
 
 # Necessary for Windows OS (won't install on *nix systems)
 gem 'tzinfo-data', platforms: [:mingw, :mswin]

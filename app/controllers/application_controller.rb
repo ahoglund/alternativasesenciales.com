@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
   before_filter :reject_locked!, if: :devise_controller?
-
+  layout :layout_by_resource
 
   # Devise permitted params
   def configure_permitted_parameters
@@ -55,5 +55,17 @@ class ApplicationController < ActionController::Base
     end
   end
   helper_method :require_admin!
+
+ 
+
+  protected
+
+  def layout_by_resource
+    if devise_controller?
+      "devise"
+    else
+      "application"
+    end
+  end
 
 end

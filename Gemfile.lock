@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/Kjarrigan/flot-rails.git
+  revision: c3b0cb2850f237e7db91ca58aa6f524f6dfea087
+  specs:
+    flot-rails (0.0.4)
+      jquery-rails (>= 2.0.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -55,6 +62,8 @@ GEM
     bootstrap-sass (3.3.4.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
+    bootstrap-social-rails (4.8.0)
+      railties (>= 3.1)
     buftok (0.2.0)
     builder (3.2.2)
     byebug (4.0.5)
@@ -109,6 +118,11 @@ GEM
     jbuilder (2.2.13)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
+    jquery-datatables-rails (3.3.0)
+      actionpack (>= 3.1)
+      jquery-rails
+      railties (>= 3.1)
+      sass-rails
     jquery-rails (4.0.3)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -262,15 +276,18 @@ DEPENDENCIES
   annotate (= 2.6.8)
   bcrypt (= 3.1.10)
   bootstrap-sass (= 3.3.4.1)
+  bootstrap-social-rails
   byebug (= 4.0.5)
   carrierwave
   ckeditor
   coffee-rails (= 4.1.0)
   devise (= 3.4.1)
   figaro (= 1.1.0)
+  flot-rails!
   font-awesome-sass (= 4.3.2.1)
   friendly_id (= 5.1.0)
   jbuilder (= 2.2.13)
+  jquery-datatables-rails
   jquery-rails (= 4.0.3)
   kaminari (= 0.16.3)
   less-rails
