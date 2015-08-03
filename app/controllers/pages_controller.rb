@@ -1,12 +1,12 @@
 class PagesController < ApplicationController
   before_action :authenticate_user!, only: [
-    :inside
+    :user_home
   ]
 
   def home
   end
 
-  def inside
+  def user_home
   end
   
   def posts

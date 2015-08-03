@@ -24,7 +24,9 @@ doc/
 .project
 .DS_Store
 .idea
+/public/uploads/*
 
 # Ignore application configuration
 /config/application.yml
 .secret
+
