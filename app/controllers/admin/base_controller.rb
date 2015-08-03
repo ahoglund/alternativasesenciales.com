@@ -8,5 +8,8 @@ class Admin::BaseController < ApplicationController
     @last_signins = User.last_signins(10)
     @count = User.users_count
     @post_count = Post.count
+    @posts = Post.published.page(params[:page]).per(50)
+    @published_post_count = Post.published.count
+    @draft_post_count = Post.drafted.count
   end
 end

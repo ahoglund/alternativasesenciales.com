@@ -1,0 +1,25 @@
+ <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bell fa-fw"></i> Last Sign Ins
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="list-group">
+                    <% @last_signins.each do |user| %>
+                    <%= link_to edit_admin_user_path(user), class: "list-group-item" do %>
+                    <i class="fa fa-user fa-fw"></i> <%= user.email %>
+                    <span class="pull-right text-muted small">
+                        <em>
+                            <% unless user.last_sign_in_at.nil? %>
+                <%= time_ago_in_words(user.last_sign_in_at)%> ago
+                <% else %>
+                never
+                <% end %></em>
+                    </span>
+                    <% end %>
+                    <% end %>
+                </div> <!-- /.list-group -->
+            </div> <!-- /.panel-body -->
+        </div> <!-- /.panel -->
+    </div> <!-- /.col -->

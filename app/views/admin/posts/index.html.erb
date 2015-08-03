@@ -1,13 +1,7 @@
-<% title("Published posts") %>
-<h3 class="page-title">Posts <small>Published</small></h3>
-<p><%= link_to "Back to dashboard", admin_posts_dashboard_path %></p>
-<hr/>
-
+<%= render partial: "admin/base/page_header", locals: { header_title: "Posts"} %>
+  <%= link_to "New post", new_admin_post_path, class: "btn btn-primary" %>
 <p class="pagination-summary"><%= page_entries_info @posts %></p>
 <%= paginate @posts %>
-
-<hr/>
-
 <ul class="fa-ul">
   <% @posts.each do |post| %>
   <li class="margin-md-down">
@@ -17,7 +11,4 @@
   </li>
   <% end %>
 </ul>
-
-<hr/>
-
 <%= paginate @posts %>

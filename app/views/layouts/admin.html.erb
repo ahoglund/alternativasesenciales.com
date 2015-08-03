@@ -10,6 +10,11 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <%= yield %>
+    <div id="wrapper">
+      <%= render 'layouts/admin/navigation' %>
+      <div id="page-wrapper">
+       <%= yield %>
+      </div> <!-- /#page-wrapper -->
+    </div>
   </body>
 </html>

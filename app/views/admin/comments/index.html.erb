@@ -1,0 +1,39 @@
+<%= render partial: "admin/base/page_header", locals: { header_title: "Comments"} %>
+<div class="text-center">
+  <p><%# page_entries_info @comments %></p>
+  <%# paginate @comments %>
+</div>
+
+<%= form_tag admin_comments_path, method: 'get', html: {role: "form"} do %>
+<p>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :name => nil, class: "btn btn-sm btn-primary" %>
+  <%= link_to "All", admin_comments_path, {class: "btn btn-sm btn-link"} %>
+</p>
+<% end %>
+
+<table class="table table-striped">
+  <tr>
+    <th>Title</th>
+    <th>User</th>
+    <th>Post</th>
+    <th>Approved?</th>
+  </tr>
+
+  <% @comments.each do |comment| %>
+
+  <tr>
+    <td><%= comment.title %></td>
+    <td><%= comment.user.email %></td>
+    <td><%= comment.commentable.title %></td>
+    <td><%# %></td>
+  </tr>
+
+  <% end %>
+
+</table>
+
+<div class="text-center">
+  <p><%# page_entries_info @comments %></p>
+  <%# paginate @comments %>
+</div>

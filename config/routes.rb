@@ -13,11 +13,10 @@ AlternativasEsenciales::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   namespace :admin do
     root "base#index"
-    resources :users do    
-      resources :avatar, to: 'user/avatar'
-    end
-    get "posts/drafts", to: "posts#drafts", as: "posts_drafts"
-    get "posts/dashboard", to: "posts#dashboard", as: "posts_dashboard"
+    resources :users
+    get "posts/drafts",    to: "posts#drafts", as: "posts_drafts"
     resources :posts
+    resources :comments
+    resources :tags
   end
 end

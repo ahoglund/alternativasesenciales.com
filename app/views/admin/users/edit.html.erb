@@ -1,10 +1,4 @@
-<% title("Edit User Id: #{@user.id}") %>
-<div class="row">
-  <div class="col-sm-6">
-    <h1>
-      Edit User <small><%= "#{@user.email} - id: #{@user.id}" %></small>
-    </h1>
-    <p><%= link_to "Back to Users", admin_users_path %></p>
+<%= render partial: "admin/base/page_header", locals: { header_title: "Editing User: #{@user.email}" } %>
 
     <%= form_for [:admin, @user], :html => { :role => "form" } do |f| %>
 
