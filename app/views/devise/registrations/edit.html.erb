@@ -1,32 +1,21 @@
-<div id="main-blog">
-  <div class="container padding-top padding-bottom">
-    <div class="row">
-      <div id="content" class="site-content col-md-6 col-md-offset-3">
-        <div class="panel panel-default">
-          <div class="panel-heading">Edit your Profile</div>
-          <div class="panel-body">
-            <%= simple_form_for(resource, :as => resource_name,
-            :url => registration_path(resource_name),
-            :html => { :method => :put, role: "form" }) do |f| %>
-            <%= devise_error_messages! %>
-            <%= f.input :email, :autofocus => true %>
-            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-            <div class="row">
-              <div class="col-sm-6">
-                <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-              </div>
-            </div>
-            <% end %>
-            <%= f.input :password, :autocomplete => "off" %>
-            <p class="help-block">(leave blank if you don't want to change it)</p>
-            <%= f.input :password_confirmation %>
-            <%= f.input :current_password %>
-            <p class="help-block">(we need your current password to confirm your changes)</p>
-            <%= f.button :submit, value: "Update" %> - <%= link_to "Cancel", user_home_path, class: "btn btn-primary" %>
-            <% end %>
-          </div>
-        </div>
-      </div>
+<%= render partial: "devise/shared/header", locals: { page_title: "Edit your profile" } %>
+  <%= simple_form_for(resource, :as => resource_name,
+  :url => registration_path(resource_name),
+  :html => { :method => :put, role: "form" }) do |f| %>
+  <%= devise_error_messages! %>
+  <%= f.input :email, :autofocus => true %>
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+  <div class="row">
+    <div class="col-sm-6">
+      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     </div>
   </div>
-</div>
+  <% end %>
+  <%= f.input :password, :autocomplete => "off" %>
+  <p class="help-block">(leave blank if you don't want to change it)</p>
+  <%= f.input :password_confirmation %>
+  <%= f.input :current_password %>
+  <p class="help-block">(we need your current password to confirm your changes)</p>
+  <%= f.button :submit, value: "Update" %> - <%= link_to "Cancel", user_home_path, class: "btn btn-primary" %>
+  <% end %>
+<%= render partial: "devise/shared/footer" %>

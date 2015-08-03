@@ -1,24 +1,13 @@
-<div id="main-blog">
-  <div class="container padding-top padding-bottom">
-    <div class="row">
-      <div id="content" class="site-content col-md-6 col-md-offset-3">
-        <div class="panel panel-default">
-          <div class="panel-heading">Sign in</div>
-          <div class="panel-body">
-            <%= simple_form_for(resource, :as => resource_name,
-            :url => session_path(resource_name),
-            role: "form") do |f| %>
-            <%= f.input :email, :autofocus => true, class: "form-control" %>
-            <%= f.input :password, class: "form-control" %>
-            <% if devise_mapping.rememberable? -%>
-            <%= f.input :remember_me, as: :boolean %>
-            <% end -%>
-            <%= f.button :submit, "Sign in", class: "btn btn-primary" %>
-            <% end %>
-            <%= render "devise/shared/links" %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render partial: "devise/shared/header", locals: { page_title: "Sign In" } %>
+  <%= simple_form_for(resource, :as => resource_name,
+  :url => session_path(resource_name),
+  role: "form") do |f| %>
+  <%= f.input :email, :autofocus => true, class: "form-control" %>
+  <%= f.input :password, class: "form-control" %>
+  <% if devise_mapping.rememberable? -%>
+  <%= f.input :remember_me, as: :boolean %>
+  <% end -%>
+  <%= f.button :submit, "Sign in", class: "btn btn-primary" %>
+  <% end %>
+  <%= render "devise/shared/links" %>
+<%= render "devise/shared/footer" %>
