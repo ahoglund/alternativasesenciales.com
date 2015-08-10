@@ -1,0 +1,12 @@
+$(".has-error").removeClass("has-error");
+$("span.help-block").remove();
+<% if @comment.errors.any? %>
+	<%  @comment.errors.messages.each do |attr,errors|  %>
+	  <% errors.each do |error| %>
+	  $("#comment_<%= attr %>").parent().addClass("has-error");
+	  $("#comment_<%= attr %>").after($("<span></span>").addClass("help-block").html("<%= error %>"));
+	  <% end %>
+	<% end %>
+<% else %>
+	$("#comment_modal").modal('hide');
+<% end %>

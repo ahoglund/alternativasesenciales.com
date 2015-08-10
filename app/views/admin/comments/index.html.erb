@@ -4,7 +4,7 @@
   <%# paginate @comments %>
 </div>
 
-<%= form_tag admin_comments_path, method: 'get', html: {role: "form"} do %>
+<%= form_tag admin_comments_search_path do %>
 <p>
   <%= text_field_tag :search, params[:search] %>
   <%= submit_tag "Search", :name => nil, class: "btn btn-sm btn-primary" %>
@@ -16,8 +16,8 @@
   <tr>
     <th>Title</th>
     <th>User</th>
-    <th>Post</th>
     <th>Approved?</th>
+    <th>View</th>
   </tr>
 
   <% @comments.each do |comment| %>
@@ -25,8 +25,10 @@
   <tr>
     <td><%= comment.title %></td>
     <td><%= comment.user.email %></td>
-    <td><%= comment.commentable.title %></td>
-    <td><%# %></td>
+    <td><%= comment.approved? ? "Yes" : "No" %></td>
+    <td>
+      <%= link_to "View", admin_comment_path(comment), class: "btn btn-primary btn-sm", remote: true, data: {toggle: "modal", target: "#comment_modal" } %>
+    </td>
   </tr>
 
   <% end %>
@@ -36,4 +38,12 @@
 <div class="text-center">
   <p><%# page_entries_info @comments %></p>
   <%# paginate @comments %>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="comment_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content"> 
+    </div>
+  </div>
 </div>

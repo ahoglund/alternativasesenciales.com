@@ -1,0 +1,11 @@
+<%= simple_form_for @comment,remote: true, url: comments_path do |f| %>
+<div id="errors">
+ <ul></ul>
+</div>
+<%= f.input :title %>
+<%= f.input :comment %>
+<%= f.input :commentable_id, as: :hidden %>
+<%= f.input :commentable_type, as: :hidden %>
+<%= f.input :user_id, as: :hidden %>
+<%= f.button :submit, value: "Post Comment" %>
+<% end %>

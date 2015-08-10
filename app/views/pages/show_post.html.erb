@@ -30,9 +30,28 @@
 				<div class="media-wrapper">
           <%# render partial: 'author_details', locals: { author: @post.user } %>
           <%= render partial: 'comments_area', locals: { commentable: @post } %>
-			    <%= render partial: 'comment_form',  locals: { commentable: @post } %>
+          <% if user_signed_in?  %>
+          <!-- Button trigger modal -->
+          <%= link_to "Post a Comment", new_comment_path(commentable_type: "Post", commentable_id: @post.id, user_id: current_user.id, ), remote: true, class: "btn btn-primary btn-lg", data: {toggle: "modal", target: "#comment_modal" } %>
+					<% end %>
+			    <%= render partial: 'sign_in_links' unless user_signed_in? %>
 				</div><!--/media-wrapper-->
 			</div>
 		</div>
 	</div>
-</div><!--/#main-blog--> 
+</div><!--/#main-blog-->
+<!-- Modal -->
+<div class="modal fade" id="comment_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Post a Comment</h4>
+      </div>
+      <div class="modal-body">
+      	<div id="comment-form-target">
+      	</div>
+      </div>
+    </div>
+  </div>
+</div>

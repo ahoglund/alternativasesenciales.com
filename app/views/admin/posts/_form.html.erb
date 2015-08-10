@@ -2,7 +2,11 @@
 <%= f.input :title, :autofocus => true, class: " monospaced-control", placeholder: "Title (also used for URL slug)..." %>
 <%= f.input :content_md, rows: 15, class: "monospaced-control", placeholder: "Post content (Markdown format)..." %>
 <%= f.input :draft %>
-<%= f.input :image %>
+<% if @post.image_url %>
+  <%= image_tag(@post.image_url(:thumb).to_s, class: "img-responsive") %>
+<% else %>
+  <%= f.input :image %>
+<% end %>
 <%= f.input :tag_list %>
 <%= f.button :submit, value: "Publish" %>
 <%= link_to "Cancel", admin_posts_path %>

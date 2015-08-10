@@ -1,0 +1,14 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h4 id="comment-title" class="modal-title" id="myModalLabel"><%= @comment.title %></h4>
+</div>
+<div class="modal-body">
+  <%= @comment.comment.html_safe %>
+</div>
+<div class="modal-footer">
+<div class="btn-group" role="group" aria-label="...">
+  <%= link_to "Approve", admin_comment_path(@comment), data: { method: 'patch', remote: true }, class: "btn btn-default" %>
+  <button type="button" class="btn btn-default">Reply</button>
+  <button type="button" class="btn btn-default">Delete</button>
+</div>
+</div>

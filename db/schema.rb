@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150729042747) do
+ActiveRecord::Schema.define(version: 20150810140434) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "title",            limit: 50, default: ""
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20150729042747) do
     t.string   "role",                        default: "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "approved",                    default: false
   end
 
   add_index "comments", ["commentable_id"], name: "index_comments_on_commentable_id"

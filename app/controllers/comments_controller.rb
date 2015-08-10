@@ -1,4 +1,8 @@
 class CommentsController  < ApplicationController
+  
+  before_action :authenticate_user!
+
+  respond_to :js, :json
 
   def new
   	build_comment
@@ -6,15 +10,23 @@ class CommentsController  < ApplicationController
 
   def create
   	build_comment
-  	if @comment.save
-  	  redirect_to :back
-  	end
+    if @comment.save
+      flash[:notice] = 'Comment was successfully posted.' 
+      respond_with @comment
+    else
+      respond_with @comment, status: 422
+    end
   end
 
   private
 
   def build_comment
-    @comment = Comment.new(comment_params)
+    @comment ||= Comment.where(nil).build
+    @comment.attributes = comment_params
+  end
+
+  def load_comment
+    @comment ||= Comment.find(params[:id])
   end
 
   def comment_params
@@ -27,5 +39,4 @@ class CommentsController  < ApplicationController
   		:user_id
   	) || {}
   end
-
 end

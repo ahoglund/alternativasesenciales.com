@@ -1,0 +1,35 @@
+<%= render partial: "admin/base/page_header", locals: { header_title: "Categories"} %>
+<div class="text-center">
+  <p><%# page_entries_info @tags %></p>
+  <%# paginate @tags %>
+</div>
+
+<%= form_tag admin_tags_search_path do %>
+<p>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :name => nil, class: "btn btn-sm btn-primary" %>
+  <%= link_to "All", admin_tags_path, {class: "btn btn-sm btn-link"} %>
+</p>
+<% end %>
+
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Used?</th>
+  </tr>
+
+  <% @tags.each do |tag| %>
+
+  <tr>
+    <td><%= link_to tag.name, edit_admin_tag_path(tag) %></td>
+    <td><%= pluralize(tag.taggings_count, 'time') %></td>
+  </tr>
+
+  <% end %>
+
+</table>
+
+<div class="text-center">
+  <p><%# page_entries_info @tags %></p>
+  <%# paginate @tags %>
+</div>

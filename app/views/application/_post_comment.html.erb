@@ -1,17 +1,23 @@
-		<li class="media">
-			<div class="post-comment">
-				<a class="pull-left" href="#">
-					<img class="media-object" src="/assets/blog/author.png" alt="">
-				</a>
-				<div class="media-body">
-					<h3 class="media-heading"><%= @comment.user %> says:</h3>
-					<h4><%= @comment.title %></h4>
-					<h4><%= @comment.created_at %></h4>
-					<p><%= @comment.comment %></p>
-					<a class="btn-reply pull-right" href=""> <i class="fa fa-mail-forward (alias)"></i> Reply</a>
-				</div>
-			</div>
-		</li>
-	  <ul class="parent media-list">
-			<!-- put child comments here -->
-	  </ul>
+<li class="media">
+	<div class="post-comment">
+		<a class="pull-left" href="#">
+			<img class="media-object" src="/assets/blog/author.png" alt="">
+		</a>
+		<div class="media-body">
+			<h3 class="media-heading"><%= @comment.user.email %> says:</h3>
+			<h4><%= @comment.title %></h4>
+			<h4><%= @comment.created_at %></h4>
+			<p><%= @comment.comment %></p>
+			<% if user_signed_in? %>
+			<%= link_to new_comment_path(commentable_type: "Comment", commentable_id: @comment.id, user_id: current_user.id),  data: { toggle: "modal", target: "#comment_modal" }, remote: true, class: "btn-reply pull-right" do %>
+			  <i class="fa fa-mail-forward (alias)"></i> Reply
+		  <% end %>
+		  <% end %>
+		</div>
+	</div>
+</li>
+<ul class="parent media-list">
+	<% @comment.comments.each do |comment| %>
+		 <%= render partial: "post_comment", locals: { :@comment => comment, :@post => @post } unless comment.new_record? %>
+	<% end %>
+</ul>

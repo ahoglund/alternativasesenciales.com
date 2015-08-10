@@ -7,16 +7,19 @@ AlternativasEsenciales::Application.routes.draw do
   get "category/:category",   to: 'pages#posts',     as: "category"
   get "posts",                to: "pages#posts",     as: "posts"
   get "posts/:id",            to: "pages#show_post", as: "post"
-
   post "/emailconfirmation",  to: "pages#email", as: "email_confirmation"
   resources :comments
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   namespace :admin do
     root "base#index"
-    resources :users
-    get "posts/drafts",    to: "posts#drafts", as: "posts_drafts"
+    post "users_search",    to: "users/search#new"
+    post "posts_search",    to: "posts/search#new"
+    post "tags_search",     to: "tags/search#new"
+    post "comments_search", to: "comments/search#new"
+    get  "posts/drafts",    to: "posts#drafts", as: "posts_drafts"
     resources :posts
     resources :comments
     resources :tags
+    resources :users
   end
 end

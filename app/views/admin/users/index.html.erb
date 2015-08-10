@@ -1,17 +1,15 @@
 <%= render partial: "admin/base/page_header", locals: { header_title: "Users"} %>
-<div class="text-center">
-  <p><%= page_entries_info @users %></p>
-  <%= paginate @users %>
-</div>
-
-<%= form_tag admin_users_path, method: 'get', html: {role: "form"} do %>
+<%= form_tag admin_users_search_path do %>
 <p>
   <%= text_field_tag :search, params[:search] %>
   <%= submit_tag "Search", :name => nil, class: "btn btn-sm btn-primary" %>
   <%= link_to "All", admin_users_path, {class: "btn btn-sm btn-link"} %>
 </p>
 <% end %>
-
+<div class="text-center">
+  <p><%= page_entries_info @users %></p>
+  <%= paginate @users %>
+</div>
 <table class="table table-striped">
   <tr>
     <th>Email</th>

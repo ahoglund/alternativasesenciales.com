@@ -3,6 +3,7 @@
   <%= render partial: "comments_summary" %>
   <%= render partial: "posts_summary", locals: {summary_title: "Published", summary_path: admin_posts_path, summary_count: @published_post_count} %>
   <%= render partial: "posts_summary", locals: {summary_title: "Drafts", summary_path: admin_posts_drafts_path, summary_count: @draft_post_count } %>
+   <%= render partial: "categories_summary" %>
 </div> <!-- /row -->
 
 <div class="row">

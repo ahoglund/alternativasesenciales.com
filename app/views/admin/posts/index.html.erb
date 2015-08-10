@@ -1,14 +1,36 @@
 <%= render partial: "admin/base/page_header", locals: { header_title: "Posts"} %>
-  <%= link_to "New post", new_admin_post_path, class: "btn btn-primary" %>
-<p class="pagination-summary"><%= page_entries_info @posts %></p>
+
+<div class="pull-right">
+<%= link_to "New post", new_admin_post_path, class: "btn btn-primary" %>
+</div>
+<%= form_tag admin_posts_search_path do %>
+<p>
+	<%= text_field_tag :search, params[:search] %>
+	<%= submit_tag "Search", :name => nil, class: "btn btn-sm btn-primary" %>
+	<%= link_to "All", admin_posts_path, {class: "btn btn-sm btn-link"} %>
+</p>
+<% end %>
+<div class="text-center">
 <%= paginate @posts %>
-<ul class="fa-ul">
-  <% @posts.each do |post| %>
-  <li class="margin-md-down">
-    <i class="fa fa-arrow-circle-o-right small"></i>&nbsp;&nbsp;
-    <%= link_to post.title, edit_admin_post_path(post.slug) %> <br/>
-    <small class="x-small-text">about <%= time_ago_in_words(post.updated_at) %> ago</small>
-  </li>
-  <% end %>
-</ul>
+<%= page_entries_info @posts %>
+</div>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Date</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @posts.each do |post| %>
+		<tr>
+			<td><%= link_to post.title, edit_admin_post_path(post.slug) %></td>
+			<td>about <%= time_ago_in_words(post.updated_at) %> ago</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<div class="text-center">
 <%= paginate @posts %>
+<%= page_entries_info @posts %>
+</div>
