@@ -59,6 +59,7 @@ end
 # SQLite 3
 group :development, :test do
   gem 'sqlite3', '1.3.10'
+  gem 'pry'
 end
 
 # Devise: https://github.com/plataformatec/devise

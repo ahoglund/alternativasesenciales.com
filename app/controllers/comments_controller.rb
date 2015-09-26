@@ -11,7 +11,6 @@ class CommentsController  < ApplicationController
   def create
   	build_comment
     if @comment.save
-      flash[:notice] = 'Comment was successfully posted.' 
       respond_with @comment
     else
       respond_with @comment, status: 422

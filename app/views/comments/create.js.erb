@@ -9,4 +9,6 @@ $("span.help-block").remove();
 	<% end %>
 <% else %>
 	$("#comment_modal").modal('hide');
+	<% binding.pry %>
+	$("#comments-area").html("<%= j render partial: 'comments_area', locals: { :@post => @comment.top_level_commentable(c: @comment.commentable) } %>");
 <% end %>
