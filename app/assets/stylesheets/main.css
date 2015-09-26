@@ -103,7 +103,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .padding-top {
-	padding-top:80px;
+	padding-top: 40px;
 }
 
 .padding-bottom {	
@@ -111,7 +111,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-title {	
-	padding-bottom:70px;
+	padding-bottom: 30px;
 }
 
 .section-title h1 {
@@ -2029,23 +2029,23 @@ textarea.form-control {
 	max-height:500px;
 }
 
-.post .entry-meta {
+.entry-meta {
 	margin-top:0;
 	margin-bottom:10px;
 }
 
-.post .entry-meta ul li {
+.entry-meta ul li {
 	display:inline-block;
 	margin-right:10px;
 }
 
-.post .entry-meta ul li i {
+.entry-meta ul li i {
 	margin-right: 5px;
 }
 
-.post .entry-meta ul li, 
-.post .entry-meta ul li i, 
-.post .entry-meta ul li a {
+.entry-meta ul li, 
+.entry-meta ul li i, 
+.entry-meta ul li a {
 	color: #898989;
 	text-transform: capitalize;
 }
@@ -2058,7 +2058,7 @@ textarea.form-control {
 	padding-right: 30px;
 }
 
-.post .entry-meta ul li a:hover {
+.entry-meta ul li a:hover {
 	color:#333;
 }
 

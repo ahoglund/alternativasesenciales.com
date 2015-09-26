@@ -12,7 +12,11 @@ class Comment < ActiveRecord::Base
 
   belongs_to :user
 
-  def top_level_commentable(c: nil)
-    c.is_a?(Comment) ? top_level_commentable(c: c.commentable) : commentable
+  def top_level_commentable
+    if commentable.is_a?(Comment)
+      commentable.top_level_commentable
+    else
+      commentable
+    end
   end
 end

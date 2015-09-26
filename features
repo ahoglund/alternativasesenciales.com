@@ -1,0 +1,18 @@
+==Comment Feature
+As a guest I should be able to post a comment
+As a user I should be able to post a comment
+As guest or user my comment needs to be approved before being displayed
+Requires a name, email address, comment body, captcha
+
+Given I have posted a comment
+My email address should be added to the notification email list
+
+==Notification of New Articles Feature
+Given i put my email address in the notification sign up form
+I should be able to get a notification of posts
+"Notify me of new Posts"
+
+==Classes Feature
+Read only list of posted classes
+When the user clicks on a class, it requires a password
+Class should only be 1 video
