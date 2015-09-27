@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+frsource 'https://rubygems.org'
 ruby '2.2.2'
 
 # Standard Rails gems
@@ -22,8 +22,14 @@ gem 'jquery-datatables-rails'
 gem 'flot-rails', :git => "https://github.com/Kjarrigan/flot-rails.git"
 gem 'bootstrap-social-rails'
 
-# Necessary for Windows OS (won't install on *nix systems)
-gem 'tzinfo-data', platforms: [:mingw, :mswin]
+# Devise: https://github.com/plataformatec/devise
+gem 'devise', '3.4.1'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+
+# Redcarpet: https://github.com/vmg/redcarpet
+gem 'redcarpet', '3.2.3'
 
 # Kaminari: https://github.com/amatsuda/kaminari
 gem 'kaminari'
@@ -44,29 +50,11 @@ gem 'bootstrap-sass'
 group :development, :test do
   gem 'byebug'
   gem 'web-console'
-
-  # Figaro: https://github.com/laserlemon/figaro
   gem 'figaro'
-
-  # Spring: https://github.com/rails/spring
   gem 'spring'
-
-  # Annotate_Models: https://github.com/ctran/annotate_models
   gem 'annotate'
-end
-
-
-# SQLite 3
-group :development, :test do
   gem 'sqlite3', '1.3.10'
   gem 'pry'
+  gem 'rspec-rails'
+  gem 'capybara-rails'
 end
-
-# Devise: https://github.com/plataformatec/devise
-gem 'devise', '3.4.1'
-gem 'omniauth'
-gem 'omniauth-twitter'
-gem 'omniauth-facebook'
-
-# Redcarpet: https://github.com/vmg/redcarpet
-gem 'redcarpet', '3.2.3'
