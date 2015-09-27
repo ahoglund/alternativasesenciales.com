@@ -40,8 +40,20 @@ jQuery(function ($) {
 		})
 
     }());
+
+	// ----------------------------------------------
+    // # Instagram
+    // ----------------------------------------------
 	
-	
+    $(document).on('page:change', function(event) {
+	    $('.instagram-lite').instagramLite({
+	        clientID: '2fe05353d6be41d1a7884edcd4cf9992',
+	        username: 'alternativasesenciales',
+	        limit: '6',
+	        urls: 1,
+	    });
+
+	});
 	// ----------------------------------------------
     // # Dropdown Menu Animation 
     // ----------------------------------------------
