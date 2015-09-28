@@ -49,7 +49,8 @@ gem "twitter-bootstrap-rails"
 gem 'bootstrap-sass'
 
 group :production do
-	gem 'pg'
+  gem 'pg'
+  gem 'puma'
 end
 
 group :development, :test do
