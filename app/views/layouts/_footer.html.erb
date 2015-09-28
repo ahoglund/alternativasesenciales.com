@@ -9,7 +9,7 @@
           <div class="col-md-3 col-sm-6">
             <div class="footer-widget text-widget">
               <a href="index.html" class="footer-logo"></a>
-              <p>Suspendisse condimentum mollis vehicula. Praesent sodales interdum elit interdum ornare. Suspendisse tristique semper arcu, non vehicula magna vestibulum nec.</p>
+              <p><%= $twitter.user("alteresenciales").description.html_safe %></p>
               <ul class="social list-inline">
                 <li><a href="https://twitter.com/alteresenciales"><i class="fa fa-twitter"></i></a></li>
                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -22,7 +22,7 @@
           <div class="col-md-3 col-sm-6">
             <div class="footer-widget contact-widget">
               <h1><span>Contact</span> Info</h1>
-              <p><i class="fa fa-envelope"></i><strong>E-mail: <br /> alternativasesenciales at gmail dot com</strong></p>
+              <p><i class="fa fa-envelope"></i><strong>E-mail: <a href="mailto:alternativasesenciales@gmail.com">alternativasesenciales@gmail.com</a></strong></p>
             </div>
           </div><!-- footer-widget -->
 
@@ -30,8 +30,8 @@
           <div class="col-md-3 col-sm-6">
             <div class="footer-widget twitter-widget">
               <h1><span>Twitter</span> Feed</h1>
-              <p><i class="fa fa-twitter"></i>about 2 hours ago</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at dolor lectus, vel rhoncus magna.. <a href="#">http://sample.com</a> <a href="#">#sampleuser</a></p>
+              <p><i class="fa fa-twitter"></i></p>
+              <p><%= link_to latest_tweet.text, latest_tweet.url.to_s %></p>
             </div>
           </div><!-- footer-widget -->
 

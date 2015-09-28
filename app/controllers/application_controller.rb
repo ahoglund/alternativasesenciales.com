@@ -23,6 +23,11 @@ class ApplicationController < ActionController::Base
     }
   end
 
+  def latest_tweet
+    @latest_tweet ||= $twitter.user_timeline('alteresenciales').first
+  end
+  helper_method :latest_tweet
+
   # Redirects on successful sign in
   def after_sign_in_path_for(resource)
     current_user.admin? ? admin_root_path : user_home_path
