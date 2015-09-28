@@ -1,4 +1,5 @@
 # Ignore the default SQLite database.
+/.bundle
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
@@ -17,5 +18,3 @@ doc/
 
 # Ignore application configuration
 /config/application.yml
-.secret
-

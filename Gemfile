@@ -3,6 +3,7 @@ ruby '2.2.2'
 
 # Standard Rails gems
 gem 'rails', '4.2.4'
+
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
@@ -46,6 +47,10 @@ gem "twitter-bootstrap-rails"
 
 # Bootstrap 3: https://github.com/twbs/bootstrap-sass
 gem 'bootstrap-sass'
+
+group :production do
+	gem 'pg'
+end
 
 group :development, :test do
   gem 'byebug'
