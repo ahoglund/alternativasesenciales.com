@@ -18,3 +18,4 @@ doc/
 
 # Ignore application configuration
 /config/application.yml
+.secret

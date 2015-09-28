@@ -47,10 +47,9 @@ gem "twitter-bootstrap-rails"
 
 # Bootstrap 3: https://github.com/twbs/bootstrap-sass
 gem 'bootstrap-sass'
-
+  gem 'puma'
 group :production do
   gem 'pg'
-  gem 'puma'
 end
 
 group :development, :test do
