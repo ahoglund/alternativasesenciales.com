@@ -1,46 +1,36 @@
 <div id="main-blog">
-	<div class="container padding-top">
-		<div class="row">
-			<%= render partial: 'layouts/sidebar' %>
-			<div id="content" class="site-content col-md-8">
-				<div class="post">
-					<div class="entry-header">
-						<div class="entry-thumbnail">
-							<%= image_tag(@post.image_url.to_s, class: "img-responsive") %>
-						</div>
-					</div>
-					<div class="post-content">	
-						<h2 class="entry-title">
-							<%= @post.title %>
-						</h2>
+  <div class="container padding-top">
+    <div class="row">
+      <%= render partial: 'layouts/sidebar' %>
+      <div id="content" class="site-content col-md-8">
+        <div class="post">
+          <div class="entry-header">
+            <div class="entry-thumbnail">
+              <%= image_tag(@post.image_url.to_s, class: "img-responsive") %>
+            </div>
+          </div>
+          <div class="post-content">
+            <h2 class="entry-title">
+              <%= @post.title %>
+            </h2>
             <%= render partial: 'post_meta_information', locals: { post: @post } %>
-						<div class="entry-summary">
+            <div class="entry-summary">
               <%= @post.content_html.html_safe %>
-						</div>
-<!-- 						<div class="social-share">
-							<ul>
-								<li><a href="#"><img class="img-responsive" src="/assets/blog/share1.jpg" alt="" /></a></li>
-								<li><a href="#"><img class="img-responsive" src="/assets/blog/share2.jpg" alt="" /></a></li>
-								<li><a href="#"><img class="img-responsive" src="/assets/blog/share3.jpg" alt="" /></a></li>
-								<li><a href="#"><img class="img-responsive" src="/assets/blog/share4.jpg" alt="" /></a></li>
-							</ul>
-						</div> --><!--/social-share-->
-					</div>
-				</div><!--/post--> 
-				<div class="media-wrapper">
+            </div>
+          </div>
+        </div><!--/post-->
+        <div class="media-wrapper">
           <%# render partial: 'author_details', locals: { author: @post.user } %>
           <div id="comments-area">
             <%= render partial: 'comments_area', locals: { commentable: @post } %>
           </div>
-          <% if user_signed_in?  %>
           <!-- Button trigger modal -->
-          <%= link_to "Post a Comment", new_comment_path(commentable_type: "Post", commentable_id: @post.id, user_id: current_user.id, ), remote: true, class: "btn btn-primary btn-lg", data: {toggle: "modal", target: "#comment_modal" } %>
-					<% end %>
-			    <%= render partial: 'sign_in_links' unless user_signed_in? %>
-				</div><!--/media-wrapper-->
-			</div>
-		</div>
-	</div>
+          <%= link_to "Post a Comment", new_comment_path(commentable_type: "Post", commentable_id: @post.id, commenter_id: commenter_id, commenter_type: commenter_type  ), remote: true, class: "btn btn-primary btn-lg", data: {toggle: "modal", target: "#comment_modal" } %>
+          <%= render partial: 'sign_in_links' unless user_signed_in? %>
+        </div><!--/media-wrapper-->
+      </div>
+    </div>
+  </div>
 </div><!--/#main-blog-->
 <!-- Modal -->
 <div class="modal fade" id="comment_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -51,8 +41,8 @@
         <h4 class="modal-title" id="myModalLabel">Post a Comment</h4>
       </div>
       <div class="modal-body">
-      	<div id="comment-form-target">
-      	</div>
+        <div id="comment-form-target">
+        </div>
       </div>
     </div>
   </div>

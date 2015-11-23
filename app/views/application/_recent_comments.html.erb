@@ -1,6 +1,6 @@
 <div class="widget">
 	<h3 class="widget_title">Recent Comments</h3>
 	<div class="recent-comment">
-		<%= render partial: 'recent_comment', as: 'recent_comment', collection: Comment.all.order(created_at: :desc).limit(5) %>
+		<%= render partial: 'recent_comment', as: 'recent_comment', collection: Comment.approved.recent(4) %>
 	</div>
 </div>

@@ -1,9 +1,10 @@
-<%= simple_form_for @comment,remote: true do |f| %>
+<%= simple_form_for @comment, remote: true do |f| %>
 	<%= f.error_notification %>
 	<%= f.input :title %>
 	<%= f.input :comment %>
 	<%= f.input :commentable_id, as: :hidden %>
 	<%= f.input :commentable_type, as: :hidden %>
-	<%= f.input :user_id, as: :hidden %>
+	<%= f.input :commenter_id, as: :hidden %>
+	<%= f.input :commenter_type, as: :hidden %>
 	<%= f.button :submit, value: "Post Comment" %>
 <% end %>

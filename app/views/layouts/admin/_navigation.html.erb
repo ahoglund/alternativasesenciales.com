@@ -1,12 +1,11 @@
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
   <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-    <span class="sr-only">Toggle navigation</span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    </button>
     <%= link_to "Alternativas Esenciales Admin", admin_root_path, class: "navbar-brand" %>
+  </div>
+  <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li><%= link_to "Back to Website", root_path, class: "pull-right" %></li>
+    </ul>
   </div>
   <!-- /.navbar-header -->
   <%# render partial: "layouts/admin/top_links" %>

@@ -13,7 +13,7 @@
 			</div>
 			<p></p>
 			<p><%= MarkdownWriter.to_html(@comment.comment).html_safe %></p>
-			<% if user_signed_in? %>
+
 			<ul class="entry-meta pull-right">
 				<li>
 			    <%= link_to new_comment_path(commentable_type: "Comment", commentable_id: @comment.id, user_id: current_user.id),  data: { toggle: "modal", target: "#comment_modal" }, remote: true, class: "btn-reply" do %>
@@ -28,7 +28,7 @@
 		      <% end %>
 				</li>
 			</ul>
-		  <% end %>
+
 		</div>
 	</div>
 </li>

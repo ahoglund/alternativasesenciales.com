@@ -18,7 +18,8 @@ ActiveRecord::Schema.define(version: 20150810140434) do
     t.text     "comment"
     t.integer  "commentable_id"
     t.string   "commentable_type"
-    t.integer  "user_id"
+    t.integer  "commenter_id"
+    t.string   "commenter_type"
     t.string   "role",                        default: "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -27,7 +28,8 @@ ActiveRecord::Schema.define(version: 20150810140434) do
 
   add_index "comments", ["commentable_id"], name: "index_comments_on_commentable_id"
   add_index "comments", ["commentable_type"], name: "index_comments_on_commentable_type"
-  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+  add_index "comments", ["commenter_id"], name: "index_comments_on_commenter_id"
+  add_index "comments", ["commenter_type"], name: "index_comments_on_commenter_type"
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false

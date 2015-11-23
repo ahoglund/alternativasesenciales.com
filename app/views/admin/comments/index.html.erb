@@ -24,7 +24,7 @@
 
   <tr>
     <td><%= comment.title %></td>
-    <td><%= comment.user.email %></td>
+    <td><%= comment.commenter.email %></td>
     <td><%= comment.approved? ? "Yes" : "No" %></td>
     <td>
       <%= link_to "View", admin_comment_path(comment), class: "btn btn-primary btn-sm", remote: true, data: {toggle: "modal", target: "#comment_modal" } %>
@@ -43,7 +43,7 @@
 <!-- Modal -->
 <div class="modal fade" id="comment_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
-    <div class="modal-content"> 
+    <div class="modal-content">
     </div>
   </div>
 </div>

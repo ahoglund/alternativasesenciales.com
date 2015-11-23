@@ -1,19 +1,16 @@
 class CommentsController  < ApplicationController
-  
-  before_action :authenticate_user!
+
+  before_action :build_comment, only: [:new, :edit, :create, :update]
 
   respond_to :js, :json
 
   def new
-  	build_comment
   end
 
   def edit
-    build_comment
   end
 
   def create
-  	build_comment
     if current_user_can_edit? && @comment.save
       respond_with @comment
     else
@@ -21,14 +18,7 @@ class CommentsController  < ApplicationController
     end
   end
 
-  def update
-    build_comment
-    if current_user_can_edit? && @comment.save
-      respond_with @comment
-    else
-      respond_with @comment, status: 422
-    end   
-  end
+  alias_method :update, :create
 
   private
 
@@ -37,12 +27,12 @@ class CommentsController  < ApplicationController
     @comment.attributes = comment_params
   end
 
-  def load_comment
-    @comment ||= Comment.find(params[:id])
+  def build_commenter
+    @commenter = params[:commenter_type].classify.constantize.find_by(email: params[:email])
   end
 
   def current_user_can_edit?
-    current_user == @comment.user
+    current_user == @comment.commenter
   end
 
   def comment_params
@@ -52,7 +42,10 @@ class CommentsController  < ApplicationController
   		:comment,
   		:commentable_id,
   		:commentable_type,
-  		:user_id
+      :commenter_type,
+  		:commenter_id,
+      :name,
+      :email
   	) || {}
   end
 end

@@ -1,6 +1,6 @@
 	<h3 class="comments-heading">Comments</h3>
 	<ul class="media-list">
-		<% @post.comments.each do |comment| %>
+		<% @post.comments.approved.each do |comment| %>
       <%= render partial: "post_comment", locals: { :@comment => comment, :@post => @post } unless comment.new_record? %>
     <% end %>
 	</ul>
