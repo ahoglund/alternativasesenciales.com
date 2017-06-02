@@ -1,6 +1,5 @@
 <div class="entry-meta">
 	<ul>
-		<li class="author"><i class="fa fa-user"></i><%= post.user.first + " " + post.user.last %></li>
 		<li class="publish-date"><i class="fa fa-calendar"></i><%= time_ago_in_words(post.updated_at) %></li>
 		<li class="tag"><i class="fa fa-tags"></i><a href="#"><%= tags_separated_by_comma(post) %></a></li>
 		<li class="comments"><i class="fa fa-comments-o"></i><a href="#"><%= post.comments.count %> Comments</a></li>
