@@ -9,6 +9,7 @@ class Admin::CommentsController < Admin::BaseController
 
 	def update
     load_comment
+    build_comment
     save_comment
 	end
 

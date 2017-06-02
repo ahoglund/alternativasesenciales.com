@@ -7,7 +7,7 @@
 </div>
 <div class="modal-footer">
 <%= simple_form_for @comment, url: admin_comment_path(@comment), role: "form", remote: true, method: "patch" do |f| %>
-<%= f.input :approved, as: :hidden, input_html: { :value => "1" } %>
+<%= f.input :approved, as: :hidden, input_html: { value: "1" } %>
 <%= f.button :submit, value: "Approve" %>
 <% end %>
 </div>
