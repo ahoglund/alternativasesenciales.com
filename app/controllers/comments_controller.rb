@@ -1,6 +1,7 @@
 class CommentsController  < ApplicationController
 
-  before_action :build_comment, only: [:new, :edit, :create, :update]
+  before_action :build_comment
+  before_action :build_commenter
 
   respond_to :js, :json
 
@@ -28,10 +29,11 @@ class CommentsController  < ApplicationController
   end
 
   def build_commenter
-    @commenter = params[:commenter_type].classify.constantize.find_by(email: params[:email])
+    @commenter = params[:commenter_type].classify.constantize.find_by_email(params[:email])
   end
 
   def current_user_can_edit?
+    return false unless @commenter
     current_user == @commenter
   end
 

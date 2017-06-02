@@ -5,6 +5,7 @@ class Comment < ActiveRecord::Base
   acts_as_commentable
 
   belongs_to :commentable, :polymorphic => true
+  belongs_to :commenter, :polymorphic => true
 
   validates_presence_of :title, :comment
 
