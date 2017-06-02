@@ -32,7 +32,7 @@ class CommentsController  < ApplicationController
   end
 
   def current_user_can_edit?
-    current_user == @comment.commenter
+    current_user == @commenter
   end
 
   def comment_params

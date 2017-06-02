@@ -15,6 +15,7 @@ class Comment < ActiveRecord::Base
   scope :unapproved, -> { where(approved: false) }
 
   scope :recent, ->(n) { order(created_at: :desc).limit(n) }
+
   belongs_to :user
 
   def top_level_commentable
