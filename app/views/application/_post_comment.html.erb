@@ -1,13 +1,9 @@
 <li class="media">
 	<div class="post-comment">
-		<a class="pull-left" href="#">
-			<img class="media-object" src="/assets/blog/author.png" alt="">
-		</a>
 		<div class="media-body">
 			<h3 class="media-heading"><%= @comment.title %></h3>
 			<div class="entry-meta">
 				<ul>
-					<li class="author"><i class="fa fa-user"></i> <%= @comment.commenter.email %></li>
 					<li class="publish-date"><i class="fa fa-calendar"></i> <%= @comment.created_at %></li>
 			  </ul>
 			</div>
