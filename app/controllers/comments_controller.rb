@@ -11,7 +11,7 @@ class CommentsController  < ApplicationController
   end
 
   def create
-    if current_user_can_edit? && @comment.save
+    if @comment.save
       respond_with @comment
     else
       respond_with @comment, status: 422
