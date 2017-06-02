@@ -5,10 +5,10 @@ class Admin::CommentsController < Admin::BaseController
 
 	def show
     load_comment
-    build_comment
 	end
 
 	def update
+    load_comment
     save_comment
 	end
 
@@ -24,7 +24,7 @@ class Admin::CommentsController < Admin::BaseController
   end
 
   def save_comment
-  	if @comment.save 
+  	if @comment.save
       redirect_to admin_commments_path
   	end
   end
@@ -40,4 +40,4 @@ class Admin::CommentsController < Admin::BaseController
   		:approved
   	) || {}
   end
-end	
+end

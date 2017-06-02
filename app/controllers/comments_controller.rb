@@ -29,7 +29,7 @@ class CommentsController  < ApplicationController
   end
 
   def build_commenter
-    @commenter = params[:commenter_type].classify.constantize.find_by_email(params[:email])
+    @commenter = comment_params[:commenter_type].classify.constantize.find_by_email(comment_params[:email])
   end
 
   def current_user_can_edit?
