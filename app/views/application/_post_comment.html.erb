@@ -7,7 +7,7 @@
 			<h3 class="media-heading"><%= @comment.title %></h3>
 			<div class="entry-meta">
 				<ul>
-					<li class="author"><i class="fa fa-user"></i> <%= @comment.user.email %></li>
+					<li class="author"><i class="fa fa-user"></i> <%= @comment.commenter.email %></li>
 					<li class="publish-date"><i class="fa fa-calendar"></i> <%= @comment.created_at %></li>
 			  </ul>
 			</div>
@@ -21,7 +21,7 @@
 			    <% end %>
 				</li>
 				<li>
-		      <% if current_user == @comment.user %>
+		      <% if current_user == @comment.commenter %>
 						<%= link_to edit_comment_path(@comment), data: { toggle: "modal", target: "#comment_modal" }, remote: true, class: "btn-reply" do %>
 						  <i class="fa fa-mail-forward (alias)"></i> Edit
 						<% end %>
