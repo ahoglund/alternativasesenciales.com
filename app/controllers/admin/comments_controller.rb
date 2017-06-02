@@ -25,7 +25,7 @@ class Admin::CommentsController < Admin::BaseController
 
   def save_comment
   	if @comment.save
-      redirect_to admin_comments_path
+      redirect_to admin_comments_path, status: :see_other
   	end
   end
 
